@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require 'commandc'
+
+Commandc::CLI.start(ARGV)
