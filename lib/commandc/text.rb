@@ -1,10 +1,9 @@
-require 'commandc/version'
 require 'uri'
 
 # @since since 0.0.1
 module Commandc
   # @since since 0.0.1
-  class Commandc
+  class Text
     attr_accessor :text, :device, :open
 
     def initialize(text, device, open)
@@ -20,10 +19,10 @@ module Commandc
         `command-c://x-callback-url/copyAndOpenURL?url=\
         #{text}&deviceName=#{device}`
       end
+    end
 
-      def escape_device_name(device_name)
-        URI.escape(device_name)
-      end
+    def escape_device_name(device_name)
+      URI.escape(device_name)
     end
   end
 end

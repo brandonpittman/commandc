@@ -1,5 +1,5 @@
 require 'thor'
-require 'commandc/commandc'
+require 'commandc/text'
 
 # @author "Brandon Pittman"
 module Commandc
@@ -28,8 +28,12 @@ module Commandc
            default: false,
            banner: 'Open copied URL on destination device (if a Mac)'
     def copy
-      output = Commandc::Commandc.new
-      output.copy(options[:text], options[:to], options[:open])
+      output = Commandc::Text.new(
+               options[:text],
+               options[:to],
+               options[:open]
+      )
+      output.copy
     end
   end
 end

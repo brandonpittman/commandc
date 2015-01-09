@@ -2,4 +2,4 @@
 
 require 'commandc'
 
-Commandc::CLI.start(ARGV)
+Commandc::Cli.start(ARGV)
