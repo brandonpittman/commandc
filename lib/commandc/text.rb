@@ -14,10 +14,9 @@ module Commandc
 
     def copy
       if open
-        `command-c://x-callback-url/copyText?text=#{text}&deviceName=#{device}`
+        `open "command-c://x-callback-url/copyText?text=#{text}&deviceName=#{device}"`
       else
-        `command-c://x-callback-url/copyAndOpenURL?url=\
-        #{text}&deviceName=#{device}`
+        `open "command-c://x-callback-url/copyAndOpenURL?url=#{text}&deviceName=#{device}"`
       end
     end
 
