@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+`commandc copy --text "Here is something" --to 'iPhone 6'`
 
 ## Contributing
 
