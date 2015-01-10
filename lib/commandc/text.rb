@@ -7,21 +7,21 @@ module Commandc
     attr_accessor :text, :device, :open
 
     def initialize(text, device, open)
-      @text = text
-      @device = escape_device_name(device)
+      @text = escape(text)
+      @device = escape(device)
       @open = open
     end
 
     def copy
       if open
-        `open "command-c://x-callback-url/copyText?text=#{text}&deviceName=#{device}"`
-      else
         `open "command-c://x-callback-url/copyAndOpenURL?url=#{text}&deviceName=#{device}"`
+      else
+        `open "command-c://x-callback-url/copyText?text=#{text}&deviceName=#{device}"`
       end
     end
 
-    def escape_device_name(device_name)
-      URI.escape(device_name)
+    def escape(text_to_escape)
+      URI.escape(text_to_escape)
     end
   end
 end
